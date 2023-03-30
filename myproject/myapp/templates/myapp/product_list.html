@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'myapp/product_list.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+  <title>Список товаров</title>
+</head>
+<body>
+<div class="page-wrapper">
+  <div class="header">
+    <h class="logo"><img src="{% static 'myapp/images/logo.png' %}" alt="logo" /></h>
+    <div class="welcome">
+      {% if user.is_authenticated %}
+        Добро пожаловать, {{ user.username }}!
+      {% endif %}
+    </div>
+
+    <div class="cart">
+    {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">Выход</a>
+      {% else %}
+        <a href="{% url 'auth' %}">Вход</a>
+      {% endif %}
+        <a href="{% url 'cart' %}">Корзина</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-list">
+  {% for product in products %}
+    <div class="product">
+      <img src="{{ product.image.url }}" alt="{{ product.title }}">
+      <h3>{{ product.title }}</h3>
+      <p>Цена: {{ product.price }} руб.</p>
+      <button class="add-to-cart" data-id="{{ product.id }}">Добавить в корзину</button>
+    </div>
+  {% endfor %}
+</div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <p>© Все права защищены, 2023</p>
+    <p>Ип "Бондаренко"</p>
+  </div>
+</footer>
+
+<script src="{% static 'myapp/script.js' %}"></script>
+</body>
+</html>

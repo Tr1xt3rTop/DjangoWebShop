@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'myapp/cart.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+
+    <title>Корзина</title>
+</head>
+<body>
+
+<div class="page-wrapper">
+  <div class="header">
+    <h class="logo"><img src="{% static 'myapp/images/logo.png' %}" alt="logo" /></h>
+    <div class="welcome">
+      {% if user.is_authenticated %}
+        Добро пожаловать, {{ user.username }}!
+      {% endif %}
+    </div>
+
+    <div class="product">
+    {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">Выход</a>
+      {% else %}
+        <a href="{% url 'auth' %}">Вход</a>
+      {% endif %}
+        <a href="{% url 'product_list' %}">Вернуться к товарам</a>
+    </div>
+  </div>
+</div>
+
+<h1>Корзина</h1>
+<div class="shopping-cart">
+    <div class="cart-items">
+        <div class="cart-item">
+            <div class="item-details">
+                <!-- Здесь будут отображаться остальные данные товара -->
+            </div>
+        </div>
+    </div>
+    <div class="cart-summary">
+        <p>Общая стоимость: <span class="total-price">0.00</span> руб.</p>
+        <button class="btn-checkout">Оформить заказ</button>
+    </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <p>© Все права защищены, 2023</p>
+    <p>Ип "Бондаренко"</p>
+  </div>
+</footer>
+
+<script src="{% static 'myapp/script.js' %}"></script>
+</body>
+</html>

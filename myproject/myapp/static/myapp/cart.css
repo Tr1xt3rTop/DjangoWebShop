@@ -1,0 +1,236 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Jost', sans-serif;
+  background: linear-gradient(to bottom, #fadfad, #fadfad, #f3e5ab, #faf0be);
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-top: 100px;
+  font-size: 2.5rem;
+}
+
+.shopping-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px #000;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.product-image-wrapper img{
+  max-width: 50%;
+  max-width: 50%;
+  margin-left: 25%;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.item-details h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.item-details p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.item-details input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.item-details button {
+  background-color: #FBCEB1;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.item-details button:hover {
+  background-color: #CD9575;
+}
+
+
+.cart-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  color: #777;
+}
+
+.total-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.btn-checkout {
+  background-color: #FBCEB1;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 1rem;
+  }
+
+  .btn-checkout:hover {
+  background-color: #CD9575;
+}
+
+.header {
+	position: fixed;
+	width: 80%;
+	min-width: 300px;
+	height: 50px;
+	border: 10px solid transparent;
+	border-top: 10px solid #fffa;
+	border-left: 10px solid #fffa;
+	box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25) inset;
+    display: flex;
+    align-items: center;
+}
+
+.header::after {
+	content: '';
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 22%;
+	height: 49px;
+	border: 10px solid transparent;
+	border-bottom: 10px solid #fffa;
+	border-right: 10px solid #fffa;
+	transition: 0.3s linear all;
+
+}
+
+.header > .logo img{
+    position: static;
+    width: 10vh;
+    height: 10vh;
+    margin-left: 3vh;
+    margin-top: 7vh;
+}
+
+.header .cart {
+  display: flex;
+  align-items: center;
+}
+
+.header a {
+  margin-left: 1rem;
+}
+
+.welcome {
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fffa;
+}
+
+.page-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+footer {
+  background-color: #CD9A7B;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content p {
+  color: #fff;
+  font-size: 1rem;
+  margin: 0.25rem;
+}
+
+.product {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	z-index: 1;
+}
+.product > a {
+	display: inline-flex;
+	padding: 13px;
+	margin-left: 2px;
+	color: #fff;
+	cursor: pointer;
+	transition: 0.3s linear all;
+	user-select: none;
+    text-decoration: none;
+}
+.product > a:hover {
+    color: #faa;
+    box-shadow: 0 50px 5px rgba(0, 0, 0, 0.15) inset;
+}

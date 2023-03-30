@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вход и Регистрация</title>
+    <link rel="stylesheet" href="{% static 'myapp/auth.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+            <div class="signup">
+                <form method="post" action="{% url 'auth' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="register_form">
+                    <label for="chk" aria-hidden="true">Регистрация</label>
+                    <input type="text" name="{{ register_form.username.html_name }}" placeholder="Имя пользователя" required>
+                    <input type="email" name="{{ register_form.email.html_name }}" placeholder="Email" required>
+                    <input type="password" name="{{ register_form.password1.html_name }}" placeholder="Пароль" required>
+                    <input type="password" name="{{ register_form.password2.html_name }}" placeholder="Подтвердите пароль" required>
+                    <button>Зарегистрироваться</button>
+                </form>
+            </div>
+
+            <div class="login">
+                <form method="post" action="{% url 'auth' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="login_form">
+                    <label for="chk" aria-hidden="true">Вход</label>
+                    <input type="text" name="{{ login_form.username.html_name }}" placeholder="Имя пользователя" required>
+                    <input type="password" name="{{ login_form.password.html_name }}" placeholder="Пароль" required>
+                    <button>Войти</button>
+                </form>
+            </div>
+    </div>
+</body>
+</html>
